@@ -1,5 +1,22 @@
-import { AppBar, Box, Container, ThemeProvider, Toolbar, Typography } from "@mui/material";
 import theme from './misc/theme';
+
+import {
+    AppBar,
+    Box,
+    Container,
+    ThemeProvider,
+    Toolbar,
+    Typography
+} from '@mui/material';
+
+import {
+    BrowserRouter,
+    Routes,
+    Route
+} from 'react-router-dom';
+
+import PostList from './components/PostList';
+import PostDetail from './components/PostDetail';
 
 export default function App() {
 
@@ -19,6 +36,13 @@ export default function App() {
 
             <Container sx={{ marginY: 3 }}>
                 
+                <BrowserRouter>
+                    <Routes>
+                        <Route path='/:post' element={ <PostDetail /> } />
+                        <Route path='/' element={ <PostList /> } />
+                    </Routes>
+                </BrowserRouter>
+
             </Container>
 
         </ThemeProvider>

@@ -8,8 +8,35 @@ export default function PostDetail() {
     const nav = useNavigate();
     const { post: ID } = useParams()
 
+    const [ fail, setFail ] = useState<boolean>(false);
     const [ post, setPost ] = useState<Post|undefined>();
-    useEffect(() => { if(ID) (async () => setPost(await findOne(ID)))() }, [ID]);
+
+    useEffect(() => { if(ID) (async () => {
+
+        try {
+            setPost(await findOne(ID));
+        } catch(error) {
+            setFail(true);
+            console.error(error);
+        }
+
+    })() }, [ID, fail]);
+
+    if(fail) return (
+
+        <>
+
+            <Alert severity="error">
+                Não foi possível obter os dados da postagem!
+            </Alert>
+            
+            <Button onClick={ () => setFail(false) }>
+                Tentar novamente
+            </Button>
+
+        </>
+
+    );
 
     return (
        
@@ -41,13 +68,7 @@ export default function PostDetail() {
         
             )}
         
-            <Button
-                onClick={ () => nav('/') }
-                sx={{ marginTop: 2 }}
-                variant='contained'
-                color='secondary'
-                fullWidth
-            >Voltar</Button>
+            <Button onClick={ () => nav('/') }>Voltar</Button>
 
         </>
 

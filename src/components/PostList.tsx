@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Alert, Box, Button } from '@mui/material';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -22,10 +22,35 @@ export default function PostList() {
 
     const nav = useNavigate();
 
+    const [ fail, setFail ] = useState<boolean>(false);
     const [ rows, setRows ] = useState<Omit<Post,'body'>[]|undefined>();
-    useEffect(() => { (async () => setRows(await findAll()))() }, []);
 
-    return (
+    useEffect(() => { (async () => {
+
+        try {
+            setRows(await findAll());
+        } catch(error) {
+            setFail(true);
+            console.error(error);
+        }
+
+    })() }, [fail]);
+
+    return fail ? (
+
+        <>
+
+            <Alert severity="error">
+                Não foi possível obter as postagens!
+            </Alert>
+            
+            <Button onClick={ () => setFail(false) }>
+                Tentar novamente
+            </Button>
+
+        </>
+
+    ) : (
 
         <Box sx={{ height: 400, width: '100%', '& .data-grid-header': {
             backgroundColor: theme.palette.secondary.main,

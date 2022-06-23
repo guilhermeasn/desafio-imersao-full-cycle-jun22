@@ -1,7 +1,9 @@
 import { createTheme } from "@mui/material";
+import { deepPurple, blue } from "@mui/material/colors";
 
 export default createTheme({
     palette: {
-        mode: 'dark'
+        primary: deepPurple,
+        secondary: blue,
     }
 }) ;

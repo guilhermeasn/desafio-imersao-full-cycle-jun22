@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Desafio da Imersão Full Cycle de Junho de 2022
 
 https://imersao.fullcycle.com.br/desafio/Imersao30/desafio-2
 

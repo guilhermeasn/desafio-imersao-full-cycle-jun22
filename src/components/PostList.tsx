@@ -60,7 +60,7 @@ export default function PostList() {
           }}}>
 
             <DataGrid
-                loading={ (rows === undefined) ? true : false }
+                loading={ rows === undefined }
                 columns={ columns }
                 rows={ rows ?? [] }
                 pageSize={5}

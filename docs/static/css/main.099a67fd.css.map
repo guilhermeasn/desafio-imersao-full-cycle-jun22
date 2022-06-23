@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.099a67fd.css","mappings":"AACA,KAGE,kCAAmC,CACnC,iCAAkC,CAFlC,kBAAqB,CADrB,QAIF","sources":["misc/index.css"],"sourcesContent":["\nbody {\n  margin: 0;\n  font-family: 'Roboto';\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n"],"names":[],"sourceRoot":""}

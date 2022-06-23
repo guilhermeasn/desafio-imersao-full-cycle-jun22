@@ -16,7 +16,7 @@ export async function findAll() : Promise<Omit<Post,'body'>[]> {
 
 }
 
-export async function findOne(id : number) : Promise<Post> {
+export async function findOne(id : string) : Promise<Post> {
 
     return (await (await fetch('https://jsonplaceholder.typicode.com/posts/' + id.toString())).json());
 

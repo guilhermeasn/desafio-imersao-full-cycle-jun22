@@ -15,4 +15,3 @@ Disponibilize a aplicação em um repositório Git que permita-se roda-la em htt
 ## Resultado do desafio
 
 http://imersaofullcyclejun22.gn.dev.br/
-https://guilhermeasn.github.io/desafio-imersao-full-cycle-jun22/

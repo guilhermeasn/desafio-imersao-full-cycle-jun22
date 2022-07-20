@@ -11,3 +11,8 @@ A estilização precisa ser feita com o Material UI, utilize sua criatividade pa
 Ao clicar em um item da listagem precisamos ser redirecionado para uma página que mostre o título e o conteúdo do post escolha.
 
 Disponibilize a aplicação em um repositório Git que permita-se roda-la em http://localhost:3000/ ao fazer os comandos ```npm install``` e ```npm start```.
+
+## Resultado do desafio
+
+http://imersaofullcyclejun22.gn.dev.br/
+https://guilhermeasn.github.io/desafio-imersao-full-cycle-jun22/
